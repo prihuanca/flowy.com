@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flowy - Seu App de Autoajuda</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <img src="img/logo.png" alt="Logo Flowy" />
+      </div>
+      <nav>
+        <a href="#home" class="active">Home</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#exercicios">Exercícios</a>
+      </nav>
+      <a href="#" class="btn-cta">Baixe o App</a>
+    </div>
+  </header>
+
+  <main>
+   <section id="home" class="section hero">
+  <div class="container hero-content">
+    <div class="hero-text">
+      <h1>FLOWY</h1>
+      <h2>DESCUBRA O PODER DE SE CUIDAR</h2>
+      <p>
+        Bem-vindo(a) ao FLOWY — seu espaço de pausa e reconexão. Aqui começa sua jornada de bem-estar. A cada acesso, você encontra sugestões personalizadas para cuidar de si com leveza e propósito. Navegue por trilhas temáticas, receba lembretes gentis para respirar, refletir ou se movimentar, e explore conteúdos que inspiram e acolhem.
+      </p>
+      <div class="store-buttons">
+        <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" /></a>
+        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" /></a>
+      </div>
+      <a href="#" class="btn-primary">BAIXE AGORA O APP</a>
+    </div>
+
+    <div class="hero-image carousel">
+      <div class="carousel-inner">
+        <img src="img/EntrarCelular.png" alt="Tela 1 do Flowy" class="active" />
+        <img src="img/Sign Up.png" alt="Tela 2 do Flowy" />
+        <img src="img/Perfil Desafio.png" alt="Tela 3 do Flowy" />
+        <img src="img/Calendário.png" alt="Tela 4 do Flowy" />
+        <img src="img/Diário.png" alt="Tela 5 do Flowy" />
+        <img src="img/Exercícios.png" alt="Tela 6 do Flowy" />
+      </div>
+      <button class="carousel-control prev" aria-label="Anterior">&#10094;</button>
+      <button class="carousel-control next" aria-label="Próximo">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+
+    <section id="sobre" class="section">
+      <div class="container">
+        <h2>Sobre o Flowy</h2>
+        <p>O Flowy nasceu para ser mais que um aplicativo: é um convite para desacelerar, respirar fundo e se reconectar consigo mesmo. Em meio à correria do dia a dia, queremos oferecer um espaço simples e acolhedor para o seu autocuidado.</p>
+        <p>Inspirados por conversas sobre saúde mental e filosofias como o minimalismo e mindfulness, criamos um app leve, intuitivo e bonito, que respeita seu ritmo e valoriza a simplicidade, autenticidade e presença.</p>
+        <ul>
+          <li><strong>Acolhimento</strong>: respeitamos seu ritmo único.</li>
+          <li><strong>Simplicidade</strong>: interface limpa e sem distrações.</li>
+          <li><strong>Autenticidade</strong>: práticas reais e humanas.</li>
+          <li><strong>Constância gentil</strong>: celebramos sua presença, não a perfeição.</li>
+        </ul>
+        <img src="img/paz2.png" alt="Screenshot do App Flowy" class="img-responsive" />
+      </div>
+    </section>
+
+   <section id="exercicios" class="section bg-light">
+  <div class="container">
+    <h2>Exercícios</h2>
+    <p>Os exercícios do Flowy foram pensados para acolher você em diferentes momentos do dia. São práticas simples, acessíveis e eficazes para promover bem-estar físico, emocional e mental.</p>
+    <p>Você pode escolher entre atividades energizantes, relaxantes ou reflexivas — tudo no seu ritmo, respeitando suas necessidades e seu tempo. O importante é se permitir cuidar de si com leveza e constância gentil.</p>
+    <ul>
+      <li><strong>Movimento consciente</strong>: caminhada, corrida leve e alongamentos funcionais para liberar tensões e aumentar a disposição.</li>
+      <li><strong>Respiração e presença</strong>: meditação guiada, pausas conscientes e técnicas de relaxamento para restaurar o equilíbrio emocional.</li>
+      <li><strong>Escrita reflexiva</strong>: exercícios para expressar emoções, organizar pensamentos e cultivar autoconhecimento.</li>
+      <li><strong>Desafios semanais</strong>: pequenas metas com recompensas simbólicas que incentivam o engajamento com o autocuidado.</li>
+    </ul>
+    <img src="img/exercicios-screenshot.jpg" alt="Exercícios do App Flowy" class="img-responsive" />
+  </div>
+</section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-container">
+      <p>&copy; 2025 Flowy. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/funcoes.js"></script>
+  <script>
+    // Destacar link ativo no menu conforme scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
